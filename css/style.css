@@ -1,0 +1,155 @@
+
+/* ini css reset */
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+
+/* semua font atau gaya teks di body yaitu georgia dll */
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+
+/* navigasi bar bagian atas untuk menampilkan menu halaman */
+nav{
+    width: 100%;
+    height: 80px;
+    background-color: goldenrod;
+    position: fixed;
+}
+
+/* logo website */
+label.logo{
+    color: white;
+    line-height: 80px;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 0 100px;
+}
+
+nav ul{
+    float: right;
+    padding-right: 10px;
+}
+
+nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+
+
+/* teks menu berwarna putih, ukuran tulisan 12pixel,dll */
+nav ul li a{
+    color: white;
+    font-size: 12px;
+    padding:  11px 10px;
+    text-transform: uppercase;
+    border-radius: 3px;
+}
+
+/* menu beranda memiliki latar aktif, dan menu yang lain akan aktif jika di sentuh
+oleh kursor mouse */
+a.active,a:hover{
+    background-color: cadetblue;
+    transition: .5s;
+}
+
+/* membuat tombol menu garis 3, dan berada pada posisi kanan layar,
+cursor pinter artinya apabila di sentuh cursor maka cursor berubah
+seperti gambar tangan. */
+.check-btn{
+    font-size: 25px;
+    float: right;
+    margin-right: 40px;
+    line-height: 80px;
+    cursor: pointer;
+    display: none;
+}
+
+
+/* menghilangkan tampilan checkbox menu */
+#check{
+    display: none;
+}
+
+
+/* setelah layar berada pada ukuran 952px
+maka ukuran font menjadi 30px dan padding 50 px */
+@media (max-width: 952px){
+    label.logo{
+        font-size: 30px;
+        padding-left: 50px;
+    }
+    nav ul li a{
+        font-size: 16px;
+    }
+}
+
+
+/* setelah layar berada pada ukuran 858px
+maka akan tampil tombol menu garis tiga */
+@media (max-width: 858px){
+    .check-btn{
+        display: block;
+    }
+
+    /* membuat posisi tampilan menu di ukuran 858px
+    menjadi fixed atau tetap di atas, lebar 100%,
+    tinggi menyesuaikan layar, warna cadetblue, 80px dari atas layar,
+    posisi di kiri 100% artinya hilang dari layar dan berada di posisi kiri,
+    semua teks berada di posisi tengah, dan transisi semuanya 5 detik.*/
+    ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;      
+        background-color: cadetblue;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+    nav ul li{
+        display: block;
+        line-height: 30px;
+        margin: 50px 0;
+    }
+    nav ul li a{
+        font-size: 20px;
+    }
+
+    /* bagian beranda aktif latarnya dan
+    menu yang lain aktif jika tersentuh kursor mouse */
+    a.active,a:hover{
+        background: none;
+        color: goldenrod;
+    }
+
+    /* setelah klik tombol garis tiga
+    akan muncul menu dari kiri ke kanan */
+    #check:checked ~ ul{
+        left: 0;
+    }
+}
+
+
+/* memberikan background dengan foto dengan url alamat sesuai tempat file,
+no repeat supaya fotonya tidak berulang-ulang tampilannya, pake size cover supaya pas di layar
+ */
+section{
+    background: url(../foto/school.jpg) no-repeat;
+    background-size: cover;
+    height: calc(100vh - 80px);
+}
+
+
+/* .container {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  } */
